@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neuer Blog-Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Neuen Blog-Post erstellen</h1>
+
+    <form method="POST" action="{{ url_for('add') }}">
+        <label for="title">Titel:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" required>
+
+        <label for="content">Inhalt:</label>
+        <textarea id="content" name="content" required></textarea>
+
+        <button type="submit">Post erstellen</button>
+    </form>
+
+    <a href="{{ url_for('index') }}" class="back-link">← Zurück zur Startseite</a>
+</body>
+</html>
