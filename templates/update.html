@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog-Post bearbeiten</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Blog-Post bearbeiten</h1>
+
+    <form method="POST" action="{{ url_for('update', post_id=post.id) }}">
+        <label for="title">Titel:</label>
+        <input type="text" id="title" name="title" value="{{ post.title }}" required>
+
+        <label for="author">Autor:</label>
+        <input type="text" id="author" name="author" value="{{ post.author }}" required>
+
+        <label for="content">Inhalt:</label>
+        <textarea id="content" name="content" required>{{ post.content }}</textarea>
+
+        <button type="submit">Änderungen speichern</button>
+    </form>
+
+    <a href="{{ url_for('index') }}" class="back-link">← Zurück zur Startseite</a>
+</body>
+</html>
