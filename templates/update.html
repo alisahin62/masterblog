@@ -9,15 +9,15 @@
 <body>
     <h1>Blog-Post bearbeiten</h1>
 
-    <form method="POST" action="{{ url_for('update', post_id=post.id) }}">
+    <form method="POST" action="{{ url_for('update', post_id=post['id']) }}">
         <label for="title">Titel:</label>
-        <input type="text" id="title" name="title" value="{{ post.title }}" required>
+        <input type="text" id="title" name="title" value="{{ post['title'] }}" required>
 
         <label for="author">Autor:</label>
-        <input type="text" id="author" name="author" value="{{ post.author }}" required>
+        <input type="text" id="author" name="author" value="{{ post['author'] }}" required>
 
         <label for="content">Inhalt:</label>
-        <textarea id="content" name="content" required>{{ post.content }}</textarea>
+        <textarea id="content" name="content" required>{{ post['content'] }}</textarea>
 
         <button type="submit">Änderungen speichern</button>
     </form>
